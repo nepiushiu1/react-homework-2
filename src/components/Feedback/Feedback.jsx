@@ -1,6 +1,8 @@
 import React from 'react';
 // import { Statistics } from './Statistics/Statistics';
 
+import css from './Feedback.module.css';
+
 class Feedback extends React.Component {
   constructor() {
     super();
@@ -32,13 +34,19 @@ class Feedback extends React.Component {
     return (
       <>
         <div>
-          <h2>Please leave feedback</h2>
-          <button onClick={this.pressingGood}>Good</button>
-          <button onClick={this.pressingNeuntral}>Neutral</button>
-          <button onClick={this.pressingBad}>Bad</button>
+          <h2 className={css.name}>Please leave feedback</h2>
+          <button className={css.btnGood} onClick={this.pressingGood}>
+            <span className={css.description}>Good</span>
+          </button>
+          <button className={css.btnNeutral} onClick={this.pressingNeuntral}>
+            <span className={css.description}>Neutral</span>
+          </button>
+          <button className={css.btnBad} onClick={this.pressingBad}>
+            <span className={css.description}>Bad</span>
+          </button>
         </div>
         <div>
-          <h2>Statistics</h2>
+          <h2 className={css.name}>Statistics</h2>
           {this.state.total === 0 && (
             <div>
               <p>There is no feedback</p>
@@ -48,25 +56,25 @@ class Feedback extends React.Component {
 
           {this.state.total !== 0 && (
             <>
-              <div>
+              <div className={css.feedback}>
                 Good:
-                <span>{this.state.good}</span>
+                <span className={css.value}>{this.state.good}</span>
               </div>
-              <div>
+              <div className={css.feedback}>
                 Neutral:
-                <span>{this.state.neutral}</span>
+                <span className={css.value}>{this.state.neutral}</span>
               </div>
-              <div>
+              <div className={css.feedback}>
                 Bad:
-                <span>{this.state.bad}</span>
+                <span className={css.value}>{this.state.bad}</span>
               </div>
-              <div>
+              <div className={css.feedback}>
                 Total:
-                <span>{this.state.total}</span>
+                <span className={css.value}>{this.state.total}</span>
               </div>
-              <div>
+              <div className={css.feedback}>
                 Positive feedback:
-                <span>{positiveFeedback.toFixed()}%</span>
+                <span className={css.value}>{positiveFeedback.toFixed()}%</span>
               </div>
             </>
           )}
