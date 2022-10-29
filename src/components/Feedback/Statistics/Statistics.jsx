@@ -1,25 +1,33 @@
-export const Statistics = () => {
+import css from '../Feedback.module.css';
+
+export const Statistics = ({
+  good,
+  neutral,
+  bad,
+  total,
+  positivePercentage,
+}) => {
   return (
     <>
-      <div>
+      <div className={css.feedback}>
         Good:
-        <span>{this.state.good}</span>
+        <span className={css.value}>{good}</span>
       </div>
-      <div>
+      <div className={css.feedback}>
         Neutral:
-        <span>{this.state.neutral}</span>
+        <span className={css.value}>{neutral}</span>
       </div>
-      <div>
+      <div className={css.feedback}>
         Bad:
-        <span>{this.state.bad}</span>
+        <span className={css.value}>{bad}</span>
       </div>
-      <div>
+      <div className={css.feedback}>
         Total:
-        <span>{this.state.total}</span>
+        <span className={css.value}>{total}</span>
       </div>
-      <div>
+      <div className={css.feedback}>
         Positive feedback:
-        <span>{this.state.bad}%</span>
+        <span className={css.value}>{positivePercentage}%</span>
       </div>
     </>
   );
