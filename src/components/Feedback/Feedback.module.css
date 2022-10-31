@@ -1,9 +1,3 @@
-/* .conteiner {
-  display: flex;
-} */
-.name {
-  margin-top: 50px;
-}
 .btnGood {
   margin-right: 10px;
   border: 2px solid gray;
@@ -13,6 +7,11 @@
 
   box-shadow: -2px 3px 12px 0px #000000;
 }
+.btnGood:focus,
+.btnGood:hover {
+  background-color: rgb(158, 156, 156);
+}
+
 .btnNeutral {
   margin-right: 10px;
   border: 2px solid gray;
@@ -22,6 +21,11 @@
 
   box-shadow: -2px 3px 12px 0px #000000;
 }
+.btnNeutral:focus,
+.btnNeutral:hover {
+  background-color: rgb(158, 156, 156);
+}
+
 .btnBad {
   border-radius: 10px;
   border: 2px solid gray;
@@ -30,19 +34,12 @@
   box-shadow: -2px 3px 12px 0px #000000;
 }
 
+.btnBad:focus,
+.btnBad:hover {
+  background-color: rgb(158, 156, 156);
+}
+
 .description {
   color: white;
   font-weight: 700;
-}
-.feedback {
-  margin-bottom: 5px;
-  font-weight: 500;
-}
-.feedback:last-child {
-  margin-bottom: 0;
-}
-
-.value {
-  margin-left: 3px;
-  font-weight: 800;
 }
