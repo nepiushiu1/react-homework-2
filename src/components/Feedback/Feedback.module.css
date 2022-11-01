@@ -1,4 +1,4 @@
-.btnGood {
+.btn {
   margin-right: 10px;
   border: 2px solid gray;
   border-radius: 10px;
@@ -7,35 +7,8 @@
 
   box-shadow: -2px 3px 12px 0px #000000;
 }
-.btnGood:focus,
-.btnGood:hover {
-  background-color: rgb(158, 156, 156);
-}
-
-.btnNeutral {
-  margin-right: 10px;
-  border: 2px solid gray;
-  border-radius: 10px;
-  padding: 5px;
-  background-color: rgb(244, 224, 10);
-
-  box-shadow: -2px 3px 12px 0px #000000;
-}
-.btnNeutral:focus,
-.btnNeutral:hover {
-  background-color: rgb(158, 156, 156);
-}
-
-.btnBad {
-  border-radius: 10px;
-  border: 2px solid gray;
-  padding: 5px;
-  background-color: red;
-  box-shadow: -2px 3px 12px 0px #000000;
-}
-
-.btnBad:focus,
-.btnBad:hover {
+.btn:focus,
+.btn:hover {
   background-color: rgb(158, 156, 156);
 }
 

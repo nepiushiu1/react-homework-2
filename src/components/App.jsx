@@ -8,30 +8,19 @@ import { Notification } from './Notification/Notification';
 class App extends React.Component {
   state = { good: 0, neutral: 0, bad: 0 };
 
-  pressingGood = () => {
-    this.setState(prevState => {
-      return { good: prevState.good + 1 };
-    });
-  };
-
-  pressingNeuntral = () => {
-    this.setState(prevState => {
-      return { neutral: prevState.neutral + 1 };
-    });
-  };
-
-  pressingBad = () => {
-    this.setState(prevState => {
-      return { bad: prevState.bad + 1 };
-    });
-  };
-
   countTotalFeedback = () => {
     return this.state.bad + this.state.good + this.state.neutral || 0;
   };
 
   countPositiveFeedbackPercentage = () => {
     return (this.state.good / this.countTotalFeedback()) * 100 || 0;
+  };
+
+  userFeedback = event => {
+    const targetBtn = event.currentTarget.name;
+    this.setState({
+      [targetBtn]: this.state[targetBtn] + 1,
+    });
   };
 
   render() {
@@ -44,9 +33,8 @@ class App extends React.Component {
             <Section title="Please leave feedback" />
             <>
               <Feedback
-                pressingGood={this.pressingGood}
-                pressingNeuntral={this.pressingNeuntral}
-                pressingBad={this.pressingBad}
+                userFeedback={this.userFeedback}
+                options={Object.keys(this.state)}
               />
             </>
           </div>
